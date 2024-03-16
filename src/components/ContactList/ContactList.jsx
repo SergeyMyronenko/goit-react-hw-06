@@ -1,13 +1,15 @@
 import { Contact } from "../Contact/Contact";
 import css from "./ContactList.module.css";
 import { nanoid } from "nanoid";
+import { useSelector } from "react-redux";
 
-export const ContactList = ({ contactsInfo, onDelete }) => {
+export const ContactList = () => {
+  const selectContacts = useSelector((state) => state.contacts.items);
   return (
     <ul className={css.contactList}>
-      {contactsInfo.map((item) => (
+      {selectContacts.map((item) => (
         <li key={nanoid()} className={css.contactListItem}>
-          <Contact contacts={item} onDelete={onDelete} />
+          <Contact contacts={item} />
         </li>
       ))}
     </ul>

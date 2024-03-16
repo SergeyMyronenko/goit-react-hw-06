@@ -11,7 +11,6 @@ const initialContacts = {
     ],
   },
 };
-console.log(initialContacts);
 const slice = createSlice({
   name: "contacts",
   initialState: initialContacts,

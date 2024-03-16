@@ -26,7 +26,7 @@ export const ContactForm = () => {
       name: value.name,
       number: value.number,
     };
-    console.log(contactInfo);
+
     dispatch(addContact(contactInfo.name, contactInfo.number));
     actions.resetForm();
   };
